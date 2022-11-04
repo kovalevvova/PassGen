@@ -78,10 +78,11 @@ let arr4 = [
   "{",
   "}",
 ];
-//! @ # $ % ^ & * ( ) - _ + = ; : , ./ ? \ | ` ~ [ ] { }
+
 // слайдер
 const slider = document.querySelector("#pointer");
-var val = 6;
+let val = 6;
+let result = 0;
 slider.addEventListener("input", function () {
   val = document.querySelector("#pointer").innerHTML = this.value;
   document.querySelector("#password-length").innerHTML = val;
@@ -115,6 +116,18 @@ function generatePass(event) {
     return Math.random() - 0.5;
   }
   result = p.slice(0, val);
+  result = result.join("");
+  document.querySelector(".form-result p").innerHTML = result;
+}
 
-  document.querySelector(".form-result p").innerHTML = result.join("");
+const formCopy = document.querySelector(".form-copy");
+
+formCopy.onclick = function() {
+  console.log(result);
+  const sysInput = document.createElement('input');
+  sysInput.setAttribute('value', result);
+  document.body.appendChild(sysInput);
+  sysInput.select();
+  document.execCommand('copy');
+  document.body.removeChild(sysInput);
 }
