@@ -81,7 +81,7 @@ let arr4 = [
 //! @ # $ % ^ & * ( ) - _ + = ; : , ./ ? \ | ` ~ [ ] { }
 // слайдер
 const slider = document.querySelector("#pointer");
-var val = 0;
+var val = 6;
 slider.addEventListener("input", function () {
   val = document.querySelector("#pointer").innerHTML = this.value;
   document.querySelector("#password-length").innerHTML = val;
