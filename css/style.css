@@ -17,7 +17,11 @@
   box-sizing: border-box;
 }
 
-html,
+.html {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   width: 100%;
   height: 100%;
@@ -53,7 +57,6 @@ a {
 
 #password-length {
   font-size: 20px;
-  font-style: oblique;
   color: var(--color-hard);
 }
 
@@ -79,9 +82,6 @@ a {
   cursor: pointer;
 }
 
-.list-checkbox {
-}
-
 .but {
   display: flex;
   justify-content: center;
@@ -94,7 +94,7 @@ a {
   width: 235px;
   height: 45px;
   margin-top: 10px;
-  border: 2px solid var(--color-hard);
+  border: 2px solid var(--color-medium);
   border-radius: 25px;
   cursor: pointer;
 }
@@ -104,12 +104,26 @@ a {
 }
 
 .form-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: 40px;
   background-color: var(--color-lite);
   padding: 5px 15px;
   border-radius: 5px;
   margin-top: 30px;
+}
+
+.form-copy {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.form-copy:hover {
+  width: 22px;
+  height: 22px;
 }
 
 .footer {
@@ -133,12 +147,11 @@ a {
 
 /*кастомный чекбокс*/
 .list-checkbox {
-  margin: auto;
+  max-width: 250px;
   padding: 10px;
   background: var(--color-white);
 }
 
-/*Checkboxes styles*/
 input[type="checkbox"] {
   display: none;
 }
@@ -185,12 +198,9 @@ input[type="checkbox"]:checked + label:before {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/*медтазапрос */
+/*медиазапрос */
 @media (max-width: 620px) {
   .form-result {
-    display: flex;
-    align-items: center;
-    width: 100%;
     font-size: 12px;
     margin-top: 10px;
   }
