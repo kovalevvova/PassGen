@@ -122,12 +122,17 @@ function generatePass(event) {
 
 const formCopy = document.querySelector(".form-copy");
 
-formCopy.onclick = function() {
-  console.log(result);
-  const sysInput = document.createElement('input');
-  sysInput.setAttribute('value', result);
+formCopy.onclick = function () {
+  //создаём поле ввода input
+  const sysInput = document.createElement("input");
+  //записывает в input текст
+  sysInput.setAttribute("value", result);
+  //добавляем input в документ
   document.body.appendChild(sysInput);
+  //выделяем тескт в input
   sysInput.select();
-  document.execCommand('copy');
+  //копируем текст из input  в буфер
+  document.execCommand("copy");
+  //удаляем input из документа
   document.body.removeChild(sysInput);
-}
+};
