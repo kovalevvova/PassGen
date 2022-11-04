@@ -122,6 +122,7 @@ function generatePass(event) {
 
 const formCopy = document.querySelector(".form-copy");
 
+
 formCopy.onclick = function() {
   console.log(result);
   const sysInput = document.createElement('input');
