@@ -138,22 +138,28 @@ formCopy.onclick = function () {
 };
 
 // переключение темы
-const moon = document.querySelector("img.sun");
+const toggle = document.querySelectorAll(".toggle img");
 const sun = document.querySelector("img.moon");
-
-sun.addEventListener("click", function () {
-  sun.classList.toggle("active");
-  moon.classList.toggle("active");
-  rootSun();
-  console.log(sun);
+const moon = document.querySelector("img.sun");
+//перебераем элементы и вешаем на них событие
+toggle.forEach((timeOfday) => {
+  timeOfday.addEventListener("click", function () {
+    if (timeOfday === sun) {
+      toggleClass();
+      rootSun();
+      console.log(sun);
+    } else {
+      toggleClass();
+      rootMoon();
+      console.log(moon);
+    }
+  });
 });
 
-moon.addEventListener("click", function () {
-  sun.classList.toggle("active");
+function toggleClass() {
   moon.classList.toggle("active");
-  rootMoon();
-  console.log(moon);
-});
+  sun.classList.toggle("active");
+}
 
 function rootMoon() {
   document.documentElement.style.setProperty("--color-hard", "#ffffff");
