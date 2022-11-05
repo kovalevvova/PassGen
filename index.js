@@ -141,8 +141,20 @@ formCopy.onclick = function () {
 const toggle = document.querySelectorAll(".toggle img");
 const sun = document.querySelector("img.moon");
 const moon = document.querySelector("img.sun");
+
+sun.addEventListener("click", function () {
+  toggleClass();
+  rootSun();
+  console.log(sun);
+});
+
+moon.addEventListener("click", function () {
+  toggleClass();;
+  rootMoon();
+  console.log(moon);
+});
 //перебераем элементы и вешаем на них событие
-toggle.forEach((timeOfday) => {
+/*toggle.forEach((timeOfday) => {
   timeOfday.addEventListener("click", function () {
     if (timeOfday === sun) {
       toggleClass();
@@ -155,7 +167,7 @@ toggle.forEach((timeOfday) => {
     }
   });
 });
-
+*/
 function toggleClass() {
   moon.classList.toggle("active");
   sun.classList.toggle("active");
