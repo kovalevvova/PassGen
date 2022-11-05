@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap");
 
 :root {
-  --color-hard: rgb(29, 29, 29);
+  --color-hard: #292929;
   --color-medium: #484848;
   --color-lite: #d3d3d3;
   --color-white: #ffff;
@@ -27,6 +27,7 @@ body {
   height: 100%;
   font-family: "Cairo", sans-serif;
   color: var(--color-hard);
+  background-color: var(--color-white);
 }
 
 .content {
@@ -109,6 +110,7 @@ a {
   justify-content: space-between;
   width: 100%;
   height: 40px;
+  color: #292929;
   background-color: var(--color-lite);
   padding: 5px 15px;
   border-radius: 5px;
@@ -127,18 +129,20 @@ a {
 }
 
 .footer {
+  display: flex;
+  justify-content: space-between;
   position: absolute;
   bottom: 0px;
   width: 100%;
   padding: 25px 80px;
-  background-color: var(--color-hard);
+  background-color: #111111;
 }
 .footer a {
   display: flex;
   color: var(--color-lite);
 }
 
-.svg {
+.telegram {
   width: 18px;
   height: 18px;
   padding-top: 4px;
@@ -178,7 +182,7 @@ input[type="checkbox"] + label:before {
   display: block;
   width: 20px;
   height: 20px;
-  border: 1px solid var(--color-medium);
+  border: 1px solid var(--color-hard);
   position: absolute;
   left: 0;
   top: 0;
@@ -198,6 +202,26 @@ input[type="checkbox"]:checked + label:before {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+.toggle {
+  display: flex;
+  align-items: center;
+}
+
+.sun,
+.moon {
+  display: none;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-lite);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.active {
+  display: block;
+}
+
 /*медиазапрос */
 @media (max-width: 620px) {
   .form-result {

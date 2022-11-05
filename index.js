@@ -136,3 +136,43 @@ formCopy.onclick = function () {
   //удаляем input из документа
   document.body.removeChild(sysInput);
 };
+
+// переключение темы
+const moon = document.querySelector("img.sun");
+const sun = document.querySelector("img.moon");
+
+sun.addEventListener("click", function () {
+  sun.classList.toggle("active");
+  moon.classList.toggle("active");
+  rootSun();
+  console.log(sun);
+});
+
+moon.addEventListener("click", function () {
+  sun.classList.toggle("active");
+  moon.classList.toggle("active");
+  rootMoon();
+  console.log(moon);
+});
+
+function rootMoon() {
+  document.documentElement.style.setProperty("--color-hard", "#ffffff");
+  document.documentElement.style.setProperty("--color-white", "#292929");
+  sun.setAttribute("data-value", "active");
+  moon.removeAttribute("data-value", "active");
+}
+
+function rootSun() {
+  document.documentElement.style.setProperty("--color-hard", "#292929");
+  document.documentElement.style.setProperty("--color-white", "#ffffff");
+  moon.setAttribute("data-value", "active");
+  sun.removeAttribute("data-value", "active");
+}
+
+/*if (document.querySelector(".sun.active")) {
+  localStorage.setItem(rootMoon)
+  }
+  else {
+    localStorage.setItem("style", "--color-hard:#ffffff; --color-white:#292929;")
+  }
+*/
