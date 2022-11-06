@@ -213,10 +213,6 @@ input[type="checkbox"]:checked + label:before {
   cursor: pointer;
 }
 
-.active {
-  display: block;
-}
-
 /*медиазапрос */
 @media (max-width: 620px) {
   .form-result {
