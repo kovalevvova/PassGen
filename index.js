@@ -138,59 +138,26 @@ formCopy.onclick = function () {
 };
 
 // переключение темы
-const toggle = document.querySelectorAll(".toggle img");
-const sun = document.querySelector("img.moon");
-const moon = document.querySelector("img.sun");
+const buttonTheme = document.querySelectorAll(".button-theme svg");
 
-sun.addEventListener("click", function () {
-  toggleClass();
-  rootSun();
-  console.log(sun);
-});
-
-moon.addEventListener("click", function () {
-  toggleClass();;
-  rootMoon();
-  console.log(moon);
-});
-//перебераем элементы и вешаем на них событие
-/*toggle.forEach((timeOfday) => {
-  timeOfday.addEventListener("click", function () {
-    if (timeOfday === sun) {
-      toggleClass();
-      rootSun();
-      console.log(sun);
-    } else {
-      toggleClass();
-      rootMoon();
-      console.log(moon);
-    }
+buttonTheme.forEach((butt) => {
+  butt.addEventListener("click", function () {
+    toggleTheme(this.dataset.theme);
+    //сохраняем в localStorage данные ключа theme
+    localStorage.setItem("theme", this.dataset.theme);
   });
 });
-*/
-function toggleClass() {
-  moon.classList.toggle("active");
-  sun.classList.toggle("active");
-}
 
-function rootMoon() {
-  document.documentElement.style.setProperty("--color-hard", "#ffffff");
-  document.documentElement.style.setProperty("--color-white", "#292929");
-  sun.setAttribute("data-value", "active");
-  moon.removeAttribute("data-value", "active");
+function toggleTheme(themeName) {
+  let themeUrl = `css/${themeName}-theme.css`;
+  console.log(themeUrl);
+  document.querySelector("[title='theme']").setAttribute("href", themeUrl);
 }
+//получаем из localStorage данные ключа theme
+let activeTheme = localStorage.getItem("theme");
 
-function rootSun() {
-  document.documentElement.style.setProperty("--color-hard", "#292929");
-  document.documentElement.style.setProperty("--color-white", "#ffffff");
-  moon.setAttribute("data-value", "active");
-  sun.removeAttribute("data-value", "active");
+if (activeTheme === null) {
+  toggleTheme("light");
+} else {
+  toggleTheme(activeTheme);
 }
-
-/*if (document.querySelector(".sun.active")) {
-  localStorage.setItem(rootMoon)
-  }
-  else {
-    localStorage.setItem("style", "--color-hard:#ffffff; --color-white:#292929;")
-  }
-*/
