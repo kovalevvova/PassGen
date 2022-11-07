@@ -91,7 +91,7 @@ slider.addEventListener("input", function () {
 //генератор паролей
 document.querySelector(".button").addEventListener("click", generatePass);
 
-function generatePass(event) {
+function generatePass() {
   let p = [];
   let checkbox_1 = document.querySelector("#checkbox-1").checked;
   let checkbox_2 = document.querySelector("#checkbox-2").checked;
@@ -112,7 +112,7 @@ function generatePass(event) {
 
   p.sort(randomize);
 
-  function randomize(a, b) {
+  function randomize() {
     return Math.random() - 0.5;
   }
   result = p.slice(0, val);
