@@ -84,7 +84,7 @@ const slider = document.querySelector("#pointer");
 let val = 6;
 let result = 0;
 slider.addEventListener("input", function () {
-  val = slider.innerHTML = this.value;
+  val = (slider.innerHTML = this.value);
   document.querySelector("#password-length").innerHTML = val;
 });
 
